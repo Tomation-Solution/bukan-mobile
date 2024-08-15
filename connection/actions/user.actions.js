@@ -2,7 +2,7 @@ import api from "../api";
 import localStorage from "react-native-sync-localstorage";
 import axios from "axios";
 
-const org_name = "buk";
+const org_name = "bukaa";
 
 // tenant/{{shortName}}/tenant/news/getyournews/
 //Gets News for a Member
@@ -32,7 +32,7 @@ export const LikeDisLikeNews = async (data, callback,errcallback) => {
       callback(response.data);
     } else {
       //   console.log(response.data.status)
-      callback(response.data);
+      // callback(response.data);
     }
   } catch(error) {
     errcallback(error)

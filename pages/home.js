@@ -51,8 +51,8 @@ const Home = ({navigation, route}) => {
   const queryParams = {type: 'is_chapter', value: "True"}
 
   const arr = query !== null ? [
-    api.get(`tenant/buk/tenant/news/newsview/get_news/?${query.type}=${query.value}`),
-    api.get(`tenant/buk/tenant/publication/getyourpublication/?${query.type}=${query.value}`)
+    api.get(`tenant/bukaa/tenant/news/newsview/get_news/?${query.type}=${query.value}`),
+    api.get(`tenant/bukaa/tenant/publication/getyourpublication/?${query.type}=${query.value}`)
   ] : []
 
   const mErrCallback = (res) => {
@@ -109,11 +109,11 @@ const Home = ({navigation, route}) => {
 
   const callback=(res)=>{
     setNews(res.data)
-    console.log('news',res.data)
+    // console.log('news',res.data)
   }
   const pCallback= (res) => {
     setPublications(res.data)
-    console.log('publication',res.data)
+    // console.log('publication',res.data)
   }
 
   const scrollHorizontal = useAnimatedStyle(() => {
@@ -177,116 +177,76 @@ const Home = ({navigation, route}) => {
     }
 
 
-  return (
-    <SafeAreaView style={tw`mx-3`}>
-      <RequestCall open={open} />
-      <StatusBar backgroundColor={'#0089ce'} showHideTransition='slide'/>
-      {/* <Text>home</Text> */}
-      <TobBar
-        body={
-          <View style={tw`flex-row justify-between `}>
-            <View>
-              <Ionicon  name='menu' onPress={()=>navigation.toggleDrawer()} size={34}/>
-            </View>
-            <View style={{flexGrow: 2}}></View>
-            <Text  style={tw`my-auto px-4`}>Welcome {name}</Text>
-            <Pressable style={{flexGrow: 0.1}} onPress={()=>navigation.navigate('profile')}>
-              <Image style={tw`h-8 w-8 rounded-full`} source={require('../images/user.png')}/>
-            </Pressable>
-            <Ionicon name='notifications' onPress={()=>navigation.navigate('notifications')} size={28} color='#0092dc'/>
-          </View>
-        }
-      />
-      <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={[tw`flex-row my-3 rounded-lg py-2  px-2`,{backgroundColor: "#93d3f482"}]}> 
-        <Ionicon name='ios-search' size={25} style={tw`mr-2`} />
-        <TextInput
-          placeholder='Search'
-          style={tw`w-9/12`}
-        />
-      </View>
-
-      {/* <View> */}
-        
-        <FlatList
-            data={news}
-            keyExtractor={ (item, index) => item.id }
-            // contentContainerStyle={styles.container}
-            numColumns={2}
-            // scrollEnabled={false}
-            showsVerticalScrollIndicator={false}
-            // contentOffset={1}
-            ListFooterComponent={<View style={tw`h-32`}></View>}
-            ListHeaderComponent={
+    return (
+      <SafeAreaView style={tw`mx-3`}>
+        <RequestCall open={open} />
+        <StatusBar backgroundColor={'#0089ce'} showHideTransition='slide'/>
+        <TobBar
+          body={
+            <View style={tw`flex-row justify-between `}>
               <View>
-                {!route.params || route.params.query.type != 'is_exco' ?
+                <Ionicon name='menu' onPress={() => navigation.toggleDrawer()} size={34} />
+              </View>
+              <View style={{ flexGrow: 2 }}></View>
+              <Text style={tw`my-auto px-4`}>Welcome {name}</Text>
+              <Pressable style={{ flexGrow: 0.1 }} onPress={() => navigation.navigate('profile')}>
+                <Image style={tw`h-8 w-8 rounded-full`} source={require('../images/user.png')} />
+              </Pressable>
+              <Ionicon name='notifications' onPress={() => navigation.navigate('notifications')} size={28} color='#0092dc' />
+            </View>
+          }
+        />
+        <FlatList
+          data={news}
+          keyExtractor={(item, index) => item.id}
+          numColumns={2}
+          showsVerticalScrollIndicator={false}
+          ListFooterComponent={<View style={tw`h-32`}></View>}
+          ListHeaderComponent={
+            <View>
+              <View style={[tw`flex-row my-3 rounded-lg py-2  px-2`, { backgroundColor: "#93d3f482" }]}>
+                <Ionicon name='ios-search' size={25} style={tw`mr-2`} />
+                <TextInput
+                  placeholder='Search'
+                  style={tw`w-9/12`}
+                />
+              </View>
+              {!route.params || route.params.query.type != 'is_exco' ?
                 <>
-                    <Text style={tw`text-base font-bold mb-2`}> Latest Update </Text>
+                  <Text style={tw`text-base font-bold mb-2`}>Latest Update</Text>
                   <PanGestureHandler onGestureEvent={gestureHandler}>
-                    <Animated.View style={[tw`flex-row`,scrollHorizontal]}>
-                      {gallery.length > 0 ? gallery.map((image,index) => 
-                      <Image resizeMode='stretch' 
-                        resizeMethod='auto' key={index} 
-                        style={tw`h-56 mx-3 w-11/12 rounded-lg`} 
-                        source={{uri: image.photo_file}}
-                      />) : <Text>No image in gallery</Text>}
+                    <Animated.View style={[tw`flex-row`, scrollHorizontal]}>
+                      {gallery.length > 0 ? gallery.map((image, index) =>
+                        <Image resizeMode='stretch'
+                          resizeMethod='auto' key={index}
+                          style={tw`h-56 mx-3 w-11/12 rounded-lg`}
+                          source={{ uri: image.photo_file }}
+                        />) : <Text>No image in gallery</Text>}
                     </Animated.View>
                   </PanGestureHandler>
-                  </>
-                 : 
-                 null
-                 }
-
-                 {/* feeds: quick links */}
-                <UpperComponent textTitle='News' show={true} count={news !== null ? news.length : 0}/>
-              </View>
-            }
-            renderItem={
-                ({item}) => (
-                  
-                  <NewsCard 
-                        image={item.image}
-                        head={item.name}
-                        item={item}
-                        navigation = {navigation}
-                        isLiked={item.likes}
-                        pressLike={()=>likeNews(item)}
-                        pressDisLike={()=>alert('like')}
-                        to='viewNews'
-                  />
-                  )}/>
-
-        {/* <FlatList
-            data={publications}
-            keyExtractor={ (item, index) => item.id }
-            numColumns={2}
-            showsVerticalScrollIndicator={false}
-            ListFooterComponent={<View style={tw`h-12`}></View>}
-            ListHeaderComponent={
-              <View>
-
-                <UpperComponent textTitle='Publications' show={false} count={publications.length < 1 !== null ? publications.length : 0}/>
-              </View>
-            }
-            renderItem={
-                ({item}) => (
-                  
-                  <NewsCard 
-                        image={item.image}
-                        head={item.name}
-                        body={item.body}
-                        item={item}
-                        navigation = {navigation}
-                        isLiked={item.likes}
-                        pressLike={()=>likeNews(item)}
-                        pressDisLike={()=>alert('like')}
-                        to='viewPublication'
-                  />
-                  )}/> */}
-      
-      </ScrollView>
-    </SafeAreaView>
-  )
+                </>
+                : null
+              }
+              <UpperComponent textTitle='News' show={true} count={news !== null ? news.length : 0} />
+            </View>
+          }
+          renderItem={
+            ({ item }) => (
+              <NewsCard
+                image={item.image}
+                head={item.name}
+                item={item}
+                navigation={navigation}
+                isLiked={item.likes}
+                pressLike={() => likeNews(item)}
+                pressDisLike={() => alert('like')}
+                to='viewNews'
+              />
+            )}
+        />
+      </SafeAreaView>
+    );
+    
 }
 
 export default Home

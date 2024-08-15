@@ -54,7 +54,7 @@ const Login = ({ navigation, route }) => {
   // console.log(route.params.user)
   const callback = () => {
     setLoading(false)
-    navigation.navigate('dashboard')
+    navigation.navigate('HomeScreen')
   }
 
   const errcallback = () => {
