@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "BUKAA",
-    "slug": "bukan",
+    "slug": "bukaa",
     "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon/icon.png",
@@ -19,14 +19,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.tomation.BUKAN"
+      "bundleIdentifier": "com.Rel8tech.BUKAA"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.tomation.BUKAN",
+      "package": "com.Rel8tech.BUKAA",
       "versionCode": 1
     },
     "web": {
