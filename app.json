@@ -27,14 +27,14 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.tomation.BUKAN",
-      "versionCode": 7
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "529ac31c-286d-4749-bc40-dc1eb17c2b4b"
+        "projectId": "0cc7be91-b6e1-4ffd-b9fc-3672fd587f1d"
       }
     }
   }
