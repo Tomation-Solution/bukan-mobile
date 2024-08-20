@@ -27,14 +27,16 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.Rel8tech.BUKAA",
-      "versionCode": 1
+      "versionCode": 1,
+      "compileSdkVersion": 33,
+      "targetSdkVersion": 33
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        
+        "projectId": "8f05508a-ef2d-4129-bbdb-598f9f00300d"
       }
     }
   }
