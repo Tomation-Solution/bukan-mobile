@@ -12,9 +12,9 @@ const ViewPublication = ({navigation, route}) => {
       <TobBar
         body={
           <View style={tw`flex-row justify-between px-3`}>
-            <Ionicon name='ios-chevron-back' onPress={()=>navigation.goBack()} size={30}/>
+            <Ionicon name='chevron-back' onPress={()=>navigation.goBack()} size={30}/>
             <Text style={tw`my-auto font-bold text-base`}>Publications</Text>
-            <Ionicon name='md-notifications' style={tw`text-purple-800`} size={30}/>
+            <Ionicon name='notifications' style={tw`text-purple-800`} size={30}/>
           </View>
         }
         />

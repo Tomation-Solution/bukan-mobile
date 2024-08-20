@@ -66,7 +66,7 @@ const GeneralSingle = ({navigation,route}) => {
       <TobBar
         body={
           <View style={tw` flex-row`}>
-            <Ionicon name='ios-chevron-back' size={30} onPress={()=>navigation.goBack()}/>
+            <Ionicon name='chevron-back' size={30} onPress={()=>navigation.goBack()}/>
             {/* <Image style={tw`h-10 w-10 ml-5 rounded-full`} source={require('../../images/onboarding/phone.png')}/> */}
             <Text style={tw` mx-2 font-bold my-auto`}>
               {commitee.name}

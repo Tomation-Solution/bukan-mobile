@@ -27,14 +27,14 @@ const News = ({navigation}) => {
       <TobBar
         body={
           <View style={tw`flex-row justify-between px-3`}>
-              <Ionicon name='ios-chevron-back' onPress={()=>navigation.goBack()} size={30}/>
+              <Ionicon name='chevron-back' onPress={()=>navigation.goBack()} size={30}/>
               <Text style={tw`my-auto font-bold text-base`}>News</Text>
-              <Ionicon name='md-notifications' style={tw`text-purple-800`} size={30}/>
+              <Ionicon name='notifications' style={tw`text-purple-800`} size={30}/>
           </View>
         }
         />
       <View style={tw`flex-row mx-4 justify-between bg-purple-100 my-3 rounded-lg py-2  px-2`}> 
-        <Ionicon name='ios-search' size={25} style={tw`mr-2`} />
+        <Ionicon name='search-outline' size={25} style={tw`mr-2`} />
         <TextInput
           placeholder='Search by date'
           style={tw`w-9/12`}

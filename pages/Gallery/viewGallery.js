@@ -10,7 +10,7 @@ const ViewGallery = ({navigation, route}) => {
       <TobBar
         body={
           <View style={tw`flex-row justify-between px-3`}>
-              <Ionicon name='ios-chevron-back' onPress={()=>navigation.goBack()} size={30}/>
+              <Ionicon name='chevron-back' onPress={()=>navigation.goBack()} size={30}/>
               <Text style={tw`my-auto font-bold text-base`}>Gallery</Text>
               <View style={tw-10}/>
           </View>

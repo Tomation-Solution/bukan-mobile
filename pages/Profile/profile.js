@@ -26,7 +26,7 @@ export default function Profile({navigation}) {
             <TobBar
                 body={
                     <View style={tw`flex-row justify-between`}>
-                        <Ionicon onPress={()=>navigation.goBack()} name='ios-chevron-back' size={30}/>
+                        <Ionicon onPress={()=>navigation.goBack()} name='chevron-back' size={30}/>
                         <Text style={tw`font-bold my-auto text-center`}>My Profile</Text>
                         <View style={tw`w-8`}></View>
                     </View>

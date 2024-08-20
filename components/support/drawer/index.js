@@ -186,9 +186,9 @@ export default function CustomDrawerList({navigation}) {
             
             
             <Pressable onPress={()=>setshowDropdown(!showDropdown)} style={tw`my-4 flex-row mx-5`}>
-                <Ionicon name='ios-file-tray-full' style={tw`mr-8 my-auto text-gray-500`} size={22} />
+                <Ionicon name='file-tray-full-outline' style={tw`mr-8 my-auto text-gray-500`} size={22} />
                 <Text style={tw`text-gray-500`}>Resources</Text>
-                <Ionicon name={showDropdown?'md-caret-up-outline':'md-caret-down-outline'} style={tw` my-auto px-2 text-gray-400`}/>
+                <Ionicon name={showDropdown?'caret-up-outline':'caret-down-outline'} style={tw` my-auto px-2 text-gray-400`}/>
             </Pressable>
             { showDropdown ? options.map(e=>
             <Pressable key={e.id} onPress={()=>handleSub(e.to)} style={tw`w-full ml-12 my-1`}>

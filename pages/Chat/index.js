@@ -39,7 +39,7 @@ const Chat = ({navigation}) => {
     const DefualtMenu = () => {
         return (
             <>
-            <Ionicon onPress={()=>navigation.goBack()} name='ios-chevron-back' size={30}/>
+            <Ionicon onPress={()=>navigation.goBack()} name='chevron-back' size={30}/>
                     <Text style={tw`my-auto mx-auto font-bold`}>Chat</Text>
                     <View>
                         <Ionicon onPress={()=> menuDisplay ? setMenuDisplay(false) : setMenuDisplay(true)} name='ellipsis-vertical' size={25}/>

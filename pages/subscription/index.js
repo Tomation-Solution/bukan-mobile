@@ -15,9 +15,9 @@ export default function Subscribe({navigation}) {
         <TobBar
             body={
                 <View style={tw`flex-row justify-between px-3`}>
-                    <Ionicon name='ios-chevron-back' onPress={()=>navigation.goBack()} size={30}/>
+                    <Ionicon name='chevron-back' onPress={()=>navigation.goBack()} size={30}/>
                     <Text style={tw`my-auto font-bold text-base`}>Subscribe</Text>
-                    <Ionicon name='md-notifications' onPress={()=>navigation.navigate('notifications')} style={tw`text-green-800`} size={30}/>
+                    <Ionicon name='notifications' onPress={()=>navigation.navigate('notifications')} style={tw`text-green-800`} size={30}/>
                 </View>
             }
         />

@@ -205,7 +205,7 @@ const Home = ({navigation, route}) => {
           ListHeaderComponent={
             <View>
               <View style={[tw`flex-row my-3 rounded-lg py-2  px-2`, { backgroundColor: "#93d3f482" }]}>
-                <Ionicon name='ios-search' size={25} style={tw`mr-2`} />
+                <Ionicon name='search-outline' size={25} style={tw`mr-2`} />
                 <TextInput
                   placeholder='Search'
                   style={tw`w-9/12`}

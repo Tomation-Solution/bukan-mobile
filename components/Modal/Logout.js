@@ -24,10 +24,11 @@ export default function Logout(props) {
       await AsyncStorage.removeItem('isRegistered');
 
       // Reset the navigation stack and navigate to the login screen
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'login' }],
-      });
+      // navigation.reset({
+      //   index: 0,
+      //   routes: [{ name: 'login' }],
+      // });
+      navigation.navigate('login')
 
       props.setVisible(false);
     } catch (error) {

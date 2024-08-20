@@ -35,9 +35,9 @@ const ViewNews = ({ navigation, route }) => {
       <TobBar
         body={
           <View style={tw`flex-row pb-1 justify-between px-3`}>
-            <Ionicon name='ios-chevron-back' onPress={() => navigation.goBack()} size={30} />
+            <Ionicon name='chevron-back' onPress={() => navigation.goBack()} size={30} />
             <Text style={tw`my-auto font-bold text-base`}>News</Text>
-            <Ionicon name='md-notifications' style={{color: "#0089ce"}} size={30} />
+            <Ionicon name='notifications' style={{color: "#0089ce"}} size={30} />
           </View>
         }
       />

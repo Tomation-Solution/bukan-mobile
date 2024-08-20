@@ -41,7 +41,7 @@ export const Members  =({navigation})=>{
     return (
         <SafeAreaView>
             <View style={tw`flex-row justify-between bg-green-100 p-3 mx-4 my-3`}>
-                <Ionicon name='ios-search' size={25} style={tw`mr-2`} />
+                <Ionicon name='search-outline' size={25} style={tw`mr-2`} />
                 <TextInput
                 placeholder='Search by date'
                 style={tw`w-9/12`}

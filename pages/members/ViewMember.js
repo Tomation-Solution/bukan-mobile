@@ -9,7 +9,7 @@ export const ViewMember =({navigation})=>{
         <SafeAreaView style={tw`h-full`}>
             <TobBar
                 body={
-                 <Ionicon onPress={()=>navigation.goBack()} name='ios-chevron-back' size={30}/>
+                 <Ionicon onPress={()=>navigation.goBack()} name='chevron-back' size={30}/>
                 }/>
 
                 <ScrollView>

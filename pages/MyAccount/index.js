@@ -39,7 +39,7 @@ const MyAccount = ({navigation}) => {
         <TobBar
             body={
                 <View style={tw`flex-row justify-between`}>
-                    <Ionicon onPress={()=>navigation.goBack()} name='ios-chevron-back' size={30}/>
+                    <Ionicon onPress={()=>navigation.goBack()} name='chevron-back' size={30}/>
                     <Text style={tw`my-auto mx-auto font-bold`}>My Account</Text>
                     <View style={tw`w-12`}></View>
                 </View>
