@@ -262,7 +262,7 @@ export default function App() {
           <>
             <Stack.Screen name="splashScreen" component={SplashScreen} />
             <Stack.Screen name="home" component={AppWelcomeScreen} />
-            <Stack.Screen name="HomeScreen" component={Home} />
+            <Stack.Screen name="HomeScreen" component={DrawerNavigation} />
             <Stack.Screen name="login" component={Login} />
             <Stack.Screen name="register" component={Register} />
             <Stack.Screen name="forgotPassword" component={ForgotPassword} />
